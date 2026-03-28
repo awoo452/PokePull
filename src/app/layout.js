@@ -14,8 +14,8 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata = {
-  title: "PokePull",
-  description: "One-button random Pokemon pulls from the Rails API only Pokemon App.",
+  title: "PokéPull",
+  description: "One-button random Pokémon pulls from the Rails API only Pokémon App.",
 };
 
 export default function RootLayout({ children }) {

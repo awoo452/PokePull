@@ -39,7 +39,7 @@ export default function Home() {
 
   const hintText = rangeOriginal
     ? "Persist disabled. Range: Original 151."
-    : "Persist disabled. Range: All Pokemon.";
+    : "Persist disabled. Range: All Pokémon.";
 
   const fetchPokemon = async () => {
     setLoading(true);
@@ -92,10 +92,10 @@ export default function Home() {
     <div className={styles.page}>
       <main className={styles.card}>
         <header className={styles.header}>
-          <p className={styles.kicker}>PokePull</p>
-          <h1>One button. One random Pokemon.</h1>
+          <p className={styles.kicker}>PokéPull</p>
+          <h1>One button. One random Pokémon.</h1>
           <p className={styles.subtitle}>
-            One-button random Pokemon pulls from the Rails API only Pokemon App.
+            One-button random Pokémon pulls from the Rails API only Pokémon App.
           </p>
         </header>
 
@@ -107,7 +107,7 @@ export default function Home() {
               onClick={fetchPokemon}
               disabled={loading}
             >
-              {loading ? "Fetching..." : "Fetch a Pokemon"}
+              {loading ? "Fetching..." : "Fetch a Pokémon"}
             </button>
             <button
               className={
@@ -208,7 +208,7 @@ export default function Home() {
                 {image ? (
                   <img
                     src={image}
-                    alt={pokemon.name || "Pokemon sprite"}
+                    alt={pokemon.name || "Pokémon sprite"}
                     loading="lazy"
                   />
                 ) : (

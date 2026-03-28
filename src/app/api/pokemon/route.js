@@ -34,7 +34,7 @@ export async function GET(request) {
     });
 
     if (!response.ok) {
-      const message = `Pokemon API error (${response.status})`;
+      const message = `Pokémon API error (${response.status})`;
       return Response.json({ error: message }, { status: response.status });
     }
 
@@ -42,7 +42,7 @@ export async function GET(request) {
     return Response.json(data, { status: 200 });
   } catch (error) {
     return Response.json(
-      { error: "Unable to reach the Pokemon API." },
+      { error: "Unable to reach the Pokémon API." },
       { status: 502 }
     );
   }

@@ -1,6 +1,6 @@
-# PokePull (Next.js)
+# PokéPull (Next.js)
 
-A tiny Next.js app that pulls a random Pokemon from your Rails Pokemon API.
+A tiny Next.js app that pulls a random Pokémon from your Rails Pokémon API.
 
 ## Local Dev
 
@@ -10,7 +10,7 @@ A tiny Next.js app that pulls a random Pokemon from your Rails Pokemon API.
 npm install
 ```
 
-2. (Optional) Point to a custom API host (defaults to the production Pokemon API):
+2. (Optional) Point to a custom API host (defaults to the production Pokémon API):
 
 ```bash
 export POKEMON_API_BASE_URL="http://localhost:3001"
@@ -32,7 +32,7 @@ The UI calls `GET /api/pokemon`, which proxies to:
 ${POKEMON_API_BASE_URL}/pokemon/random?persist=false
 ```
 
-If `POKEMON_API_BASE_URL` is not set, the production Pokemon API is used by default.
+If `POKEMON_API_BASE_URL` is not set, the production Pokémon API is used by default.
 
 Query parameters `persist` and `range` are passed through if you add them to the UI request.
 
