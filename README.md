@@ -1,4 +1,4 @@
-# Pokemon Pulse (Next.js)
+# PokePull (Next.js)
 
 A tiny Next.js app that pulls a random Pokemon from your Rails Pokemon API.
 
@@ -30,21 +30,21 @@ The UI calls `GET /api/pokemon`, which proxies to:
 
 ```
 ${POKEMON_API_BASE_URL}/pokemon/random?persist=false
+```
 
 If `POKEMON_API_BASE_URL` is not set, the production Pokemon API is used by default.
+
+Query parameters `persist` and `range` are passed through if you add them to the UI request.
 
 ## UI Features
 
 - Original 151 toggle uses `range=original`.
 - Recent pulls are kept client-side (last 3).
-```
-
-Query parameters `persist` and `range` are passed through if you add them to the UI request.
 
 ## Deploy (AWS Amplify)
 
 - Create a new Amplify Hosting app from this repo.
-- Set the app root to `aws-amplify/nextjs`.
+- Set the app root to `aws-amplify/PokePull`.
 - Amplify should auto-detect Next.js.
 - Add the environment variable `POKEMON_API_BASE_URL` pointing at your production API.
 
