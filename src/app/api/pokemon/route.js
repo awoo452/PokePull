@@ -1,5 +1,5 @@
 const DEFAULT_API_BASE_URL =
-  "https://pokemon-api-03a0e8d55140.herokuapp.com";
+  "https://pokemon-api-production-c22f50cb6ffe.herokuapp.com";
 
 const buildApiUrl = (baseUrl, requestUrl) => {
   const incoming = new URL(requestUrl);
