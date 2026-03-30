@@ -109,18 +109,15 @@ export default function Home() {
             >
               {loading ? "Fetching..." : "Fetch a Pokémon"}
             </button>
-            <button
-              className={
-                rangeOriginal
-                  ? `${styles.toggle} ${styles.toggleActive}`
-                  : styles.toggle
-              }
-              type="button"
-              aria-pressed={rangeOriginal}
-              onClick={() => setRangeOriginal((prev) => !prev)}
-            >
-              Original 151
-            </button>
+            <label className={styles.switch}>
+              <input
+                type="checkbox"
+                checked={rangeOriginal}
+                onChange={(event) => setRangeOriginal(event.target.checked)}
+              />
+              <span className={styles.switchTrack} aria-hidden="true" />
+              <span className={styles.switchLabel}>Original 151</span>
+            </label>
           </div>
           <p className={styles.hint}>{hintText}</p>
         </section>
@@ -135,14 +132,7 @@ export default function Home() {
                   Rate limit hit. Wait a minute and try again.
                 </p>
               ) : null}
-              <button
-                type="button"
-                className={styles.retry}
-                onClick={fetchPokemon}
-                disabled={loading}
-              >
-                Retry
-              </button>
+              <p className={styles.errorHint}>Use the button above to retry.</p>
             </div>
           ) : null}
 

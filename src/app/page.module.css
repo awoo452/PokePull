@@ -127,25 +127,61 @@
   outline-offset: 4px;
 }
 
-.toggle {
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
   border-radius: 999px;
-  padding: 12px 20px;
   border: 1px solid rgba(30, 20, 10, 0.14);
   background: #fffaf4;
-  color: var(--ink);
-  font-weight: 600;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.toggle:hover {
-  border-color: rgba(30, 20, 10, 0.3);
+.switch input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
-.toggleActive {
+.switchTrack {
+  position: relative;
+  width: 42px;
+  height: 24px;
+  border-radius: 999px;
+  background: rgba(27, 24, 21, 0.2);
+  transition: background 0.2s ease;
+}
+
+.switchTrack::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff7ef;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.switchLabel {
+  font-weight: 600;
+}
+
+.switch:focus-within {
+  box-shadow: 0 0 0 3px var(--ring);
+  border-color: var(--accent);
+}
+
+.switch input:checked + .switchTrack {
   background: #1b1815;
-  color: #fff7ef;
-  border-color: #1b1815;
+}
+
+.switch input:checked + .switchTrack::after {
+  transform: translateX(18px);
 }
 
 .hint {
@@ -182,15 +218,6 @@
   font-size: 0.95rem;
 }
 
-.retry {
-  align-self: flex-start;
-  border-radius: 999px;
-  border: none;
-  padding: 10px 18px;
-  background: #1b1815;
-  color: #fff7ef;
-  cursor: pointer;
-}
 
 .empty {
   color: var(--muted);
@@ -405,9 +432,9 @@
     width: 100%;
   }
 
-  .toggle {
+  .switch {
     width: 100%;
-    text-align: center;
+    justify-content: space-between;
   }
 }
 
